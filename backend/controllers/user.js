@@ -1,7 +1,7 @@
 // Importing Models
 const User = require('../models/User')
 // Importing Helper functions
-const {validateEmail, validateLength} = require('../helpers/validation')
+const {validateEmail, validateLength, validateUsername} = require('../helpers/validation')
 // Importing Libraries
 const bcrypt = require("bcrypt");
 
@@ -53,15 +53,19 @@ exports.register = async (req, res) => {
             });
         }
 
+        // Encrypted password 
         const cryptedPassword = await bcrypt.hash(password, 12);
-        console.log(cryptedPassword);
+
+        // 
+        let tempUsername = first_name+last_name;
+        let newUsername = await validateUsername(tempUsername)
         return;
         const user = await new User({
             first_name,
             last_name,
             email,
             password,
-            username,
+            username: newUsername,
             bYear,
             bMonth,
             bDay,
