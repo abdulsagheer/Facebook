@@ -114,7 +114,7 @@ exports.activateAccount = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
-    exports.login = async (req, res) => {
+exports.login = async (req, res) => {
     try {
         const { email, password } = req.body;
         const user = await User.findOne({ email });
@@ -122,7 +122,7 @@ exports.activateAccount = async (req, res) => {
         return res.status(400).json({
             message:
             "the email address you entered is not connected to an account.",
-        });
+            });
         }
         const check = await bcrypt.compare(password, user.password);
         if (!check) {
