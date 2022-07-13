@@ -1,13 +1,16 @@
+// Importing Libraries
+import Cookies from "js-cookie";
 
-const userReducer = (state = null, action) => {
+export function userReducer(
+  state = Cookies.get("user") ? JSON.parse(Cookies.get("user")) : null,
+
+  action
+) {
   switch (action.type) {
-
     case "LOGIN":
-        return action.payload
+      return action.payload;
 
     default:
-        return state
+      return state;
   }
 }
-
-export default userReducer;

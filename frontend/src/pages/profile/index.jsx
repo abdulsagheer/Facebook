@@ -1,3 +1,4 @@
+// Importing styles
 import "./style.css";
 
 const Profile = () => {
