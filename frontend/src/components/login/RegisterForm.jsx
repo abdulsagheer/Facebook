@@ -80,7 +80,7 @@ export default function RegisterForm({ setVisible }) {
     const registerSubmit = async () => {
         try {
         const { data } = await axios.post(
-            `${process.env.REACT_APP_BACKEND_URL}/register`,
+            `${process.env.REACT_APP_BACKEND_URL}/user/register`,
             {
             first_name,
             last_name,
@@ -216,7 +216,7 @@ export default function RegisterForm({ setVisible }) {
                     notifications from us and can opt out at any time.
                 </div>
                 <div className="reg_btn_wrapper">
-                    <button className="blue_btn open_signup">Sign Up</button>
+                    <button className="blue_btn open_signup" type="submit">Sign Up</button>
                 </div>
                 <DotLoader color="#1876f2" loading={loading} size={30} />
                 {error && <div className="error_text">{error}</div>}
