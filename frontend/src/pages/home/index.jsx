@@ -1,9 +1,10 @@
-import './style.css'
+import { useRef, useState } from "react";
+import Header from "../../components/header";
 
-const Home = () => {
+export default function Home() {
   return (
-    <div>Home</div>
-  )
+    <div>
+      <Header />
+    </div>
+  );
 }
-
-export default Home
