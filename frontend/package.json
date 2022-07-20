@@ -20,7 +20,12 @@
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
     "web-vitals": "^2.1.4",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "emoji-picker-react": "^3.5.1",
+    "file-saver": "^2.0.5",
+    "react-easy-crop": "^4.1.4",
+    "react-loading-skeleton": "^3.0.3",
+    "react-moment": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
